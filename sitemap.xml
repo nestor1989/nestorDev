@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nestordelrio.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nestordelrio.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nestordelrio.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nestordelrio.dev/pt/"/>
+  </url>
+  <url>
+    <loc>https://nestordelrio.dev/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nestordelrio.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nestordelrio.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nestordelrio.dev/pt/"/>
+  </url>
+  <url>
+    <loc>https://nestordelrio.dev/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://nestordelrio.dev/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nestordelrio.dev/en/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://nestordelrio.dev/pt/"/>
+  </url>
+</urlset>
