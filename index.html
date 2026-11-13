@@ -3,6 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* First visit to the Spanish home: send English and Portuguese browsers to their version.
+   An explicit choice in the language selector is remembered and always wins. */
+(function () {
+  var KEY = "nestordelrio.lang", PATHS = { en: "/en/", pt: "/pt/" }, lang = null;
+  try { lang = localStorage.getItem(KEY); } catch (e) {}
+  if (!lang) {
+    try { if (document.referrer && new URL(document.referrer).host === location.host) return; } catch (e) {}
+    if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|headless/i.test(navigator.userAgent)) return;
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    lang = "es";
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i]).toLowerCase().slice(0, 2);
+      if (code === "es" || code === "en" || code === "pt") { lang = code; break; }
+    }
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+  }
+  if (PATHS[lang]) location.replace(PATHS[lang] + location.search + location.hash);
+})();
+</script>
 <title>Néstor del Río · Android Developer y producto</title>
 <meta name="description" content="Desarrollador Android con mirada de producto. Apps en Google Play que usan miles de personas e Idea 3D, una plataforma web y mobile para makers.">
 <link rel="canonical" href="https://nestordelrio.dev/">
@@ -631,5 +651,12 @@ a{color:#15171A}a:hover{color:#5B2BB5}
 </section>
 
 </div>
+<script>
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest('[role="group"] a[href]');
+  var lang = a && { "/": "es", "/en/": "en", "/pt/": "pt" }[a.getAttribute("href")];
+  if (lang) try { localStorage.setItem("nestordelrio.lang", lang); } catch (err) {}
+});
+</script>
 </body>
 </html>

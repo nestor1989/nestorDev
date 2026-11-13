@@ -631,5 +631,12 @@ a{color:#15171A}a:hover{color:#5B2BB5}
 </section>
 
 </div>
+<script>
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest('[role="group"] a[href]');
+  var lang = a && { "/": "es", "/en/": "en", "/pt/": "pt" }[a.getAttribute("href")];
+  if (lang) try { localStorage.setItem("nestordelrio.lang", lang); } catch (err) {}
+});
+</script>
 </body>
 </html>
